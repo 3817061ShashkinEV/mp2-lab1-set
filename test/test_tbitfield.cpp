@@ -309,7 +309,6 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
   EXPECT_NE(bf1, bf2);
 }
 // ---------------------------------------------------------------------------
-
 TEST(TBitField, compare_of_bitfields_is_true)
 {
   const int size = 4;

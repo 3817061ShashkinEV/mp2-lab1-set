@@ -11,7 +11,7 @@ public:
   TSet(const TSet &s);       // конструктор копирования
   TSet(const TBitField &bf); // конструктор преобразования типа
   operator TBitField();      // преобразование типа к битовому полю
-
+ 
   int GetMaxPower(void) const;     // максимальная мощность множества
   void InsElem(const int elem);       // включить элемент в множество
   void DelElem(const int elem);       // удалить элемент из множества

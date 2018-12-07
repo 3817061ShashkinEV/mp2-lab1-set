@@ -86,8 +86,8 @@ int main()
     // если м в s, удаление кратных
     if (s.IsMember(m))
       for (k = 2 * m; k <= n; k += m)
-       if (s.IsMember(k))
-         s.DelElem(k);
+        if (s.IsMember(k))
+          s.DelElem(k);
   // оставшиеся в s элементы - простые числа
   cout << endl << "Печать множества некратных чисел" << endl << s << endl;
   cout << endl << "Печать простых чисел" << endl;
@@ -116,7 +116,7 @@ int main()
   for (m = 0; m <= maxElem; m++)
     if (bit.IsMember(m))
       cout << setw(3) << m << " ";
-  cout << endl;
+    cout << endl;
 }
 
 #endif
