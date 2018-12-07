@@ -16,7 +16,7 @@
 
 int main()
 {
-  int n, m, k, count;
+  int n, m, k, count, sizeOfBitStr;
 
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование программ поддержки битового поля" << endl;
@@ -49,6 +49,20 @@ int main()
     }
   cout << endl;
   cout << "В первых " << n << " числах " << count << " простых" << endl;
+
+  cout << "\n\n\tВвод битовой строки\n";
+  cout << "Введите размер битовой строки\n";
+  cin >> sizeOfBitStr;
+  TBitField bit(sizeOfBitStr);
+  cout << "Введите битовую строку длинной " << sizeOfBitStr << "\n";
+  cin >> bit;
+  cout << "\nВаша битовая строка\n";
+  cout << bit;
+  cout << "\n\nМножество чисел битовой строки\n";
+  for (m = 0; m < sizeOfBitStr; m++)
+    if (bit.GetBit(m))
+      cout << setw(3) << m << " ";
+  cout << endl;
 }
 #else
 
@@ -56,7 +70,7 @@ int main()
 
 int main()
 {
-  int n, m, k, count;
+  int n, m, k, count, maxElem;
 
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование программ поддержки множества" << endl;
@@ -89,6 +103,20 @@ int main()
     }
   cout << endl;
   cout << "В первых " << n << " числах " << count << " простых" << endl;
+
+  cout << "\n\n\tВвод множества целых чисел\n";
+  cout << "Введите наибольший элемент множества\n";
+  cin >> maxElem;
+  TSet bit(maxElem + 1);
+  cout << "Введите элементы множества (-1 или число >" << maxElem << " для завершения ввода)\n";
+  cin >> bit;
+  cout << "\nВведенное множество в виде битовой строки\n";
+  cout << bit;
+  cout << "\n\nВведенное множество в виде хранимых в нем целых чисел\n";
+  for (m = 0; m <= maxElem; m++)
+    if (bit.IsMember(m))
+      cout << setw(3) << m << " ";
+  cout << endl;
 }
 
 #endif
