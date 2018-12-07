@@ -309,3 +309,9 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
 
   EXPECT_NE(bf1, bf2);
 }
+
+TEST(TBitField, two_plus_two_equals_four)
+{
+	EXPECT_EQ(4, 2 + 2);
+}
+
