@@ -6,7 +6,7 @@ TBitField::TBitField(int len)
   if (len <= 0) throw - 1;
   bitLen = len;
   memLen = (bitLen + 31) >> 5;
-  pMem = new uInr[memLen];
+  pMem = new uInt[memLen];
   for (int i = 0; i < memLen; i++)
     pMem[i] = 0;
 }
@@ -15,7 +15,7 @@ TBitField::TBitField(const TBitField &bf)
 {
   bitLen = bf.bitLen;
   memLen = bf.memLen;
-  pMem = new uInr [memLen];
+  pMem = new uInt [memLen];
   for (int i = 0; i < memLen; i++)
     pMem[i] = bf.pMem[i];
 }
@@ -30,7 +30,7 @@ int TBitField::GetMemIndex(const int n) const
   return n >> 5;
 }
 // ---------------------------------------------------------------------------
-uInr TBitField::GetMemMask(const int n) const
+uInt TBitField::GetMemMask(const int n) const
 {
   return 1 << (n & 31);
 }
@@ -65,7 +65,7 @@ TBitField& TBitField::operator=(const TBitField &bf)
     delete[] pMem;
     bitLen = bf.bitLen;
     memLen = bf.memLen;
-    pMem = new uInr [memLen];
+    pMem = new uInt [memLen];
     for (int i = 0; i < memLen; i++)
       pMem[i] = bf.pMem[i];
   }

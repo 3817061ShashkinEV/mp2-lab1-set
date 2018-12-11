@@ -3,17 +3,17 @@
 
 using namespace std;
 
-typedef unsigned int uInr;
+typedef unsigned int uInt;
 
 class TBitField
 {
 private:
   int  bitLen; // длина битового поля - макс. к-во битов
-  uInr *pMem; // память для представления битового поля
+  uInt *pMem; // память для представления битового поля
   int  memLen; // к-во эл-тов Мем для представления бит.поля
 
   int   GetMemIndex(const int n) const; // индекс в pМем для бита n
-  uInr GetMemMask (const int n) const; // битовая маска для бита n
+  uInt GetMemMask (const int n) const; // битовая маска для бита n
 public:
   TBitField(int len); 
   TBitField(const TBitField &bf);
